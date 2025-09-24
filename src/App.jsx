@@ -211,12 +211,6 @@ export default function App() {
     <>
       <RouterProvider router={routes} />
       <ToastContainer theme="colored" autoClose="1000" />
-
-      <Offline>
-        <div className="offline bg-danger">
-          <p className="mb-0">You're offline now!</p>
-        </div>
-      </Offline>
     </>
   );
 }
