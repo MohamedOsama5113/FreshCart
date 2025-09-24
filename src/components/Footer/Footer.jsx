@@ -140,10 +140,10 @@ export default function Footer() {
                   <i className="fas fa-envelope me-3" /> info@example.com
                 </p>
                 <p>
-                  <i className="fas fa-phone me-3" /> + 01 234 567 88
+                  <i className="fas fa-phone me-3" /> + 01 234 555 88
                 </p>
                 <p>
-                  <i className="fas fa-print me-3" /> + 01 234 567 89
+                  <i className="fas fa-print me-3" /> + 01 234 555 89
                 </p>
               </div>
               <div className="col-sm-6  col-lg-4 mx-auto mb-4">
