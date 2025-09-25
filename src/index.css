@@ -3,17 +3,19 @@
 
 :root {
   --text-color-main: #2D3436;
-  --text-color-main-alt: #636E72;
+  --text-color-main-alt: #4A5568;
 
-  --main-color: #6C5CE7;
-  --light-color: #F5F6FA;
+  --main-color: #0CAD0A;
+  --main-color-hover: #099108;
+  --main-color-light: #E6F6E6;
+  --light-color: #F7FAF7;
 
-  --shadow: rgba(108, 92, 231, 0.1) 0px 4px 12px,
-    rgba(108, 92, 231, 0.06) 0px 1px 3px;
+  --shadow: rgba(12, 173, 10, 0.1) 0px 4px 12px,
+    rgba(12, 173, 10, 0.06) 0px 1px 3px;
   --font-family: "Encode Sans Expanded", sans-serif;
 
-  --rating-color: #FDA7DF;
-  --main-color-alt: #A29BFE;
+  --rating-color: #FFA41C;
+  --main-color-alt: #34D399;
 }
 
 :focus-visible {
@@ -112,11 +114,34 @@ a:hover {
   border-radius: 8px;
   transition: all 0.3s ease;
   font-weight: 500;
+  padding: 8px 20px;
 }
 
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
+}
+
+.btn.bg-main {
+  background-color: var(--main-color) !important;
+  border-color: var(--main-color);
+  color: white;
+}
+
+.btn.bg-main:hover {
+  background-color: var(--main-color-hover) !important;
+  border-color: var(--main-color-hover);
+}
+
+.btn.btn-outline-success {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.btn.btn-outline-success:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: white;
 }
 
 .card {

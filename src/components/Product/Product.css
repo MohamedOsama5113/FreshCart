@@ -9,11 +9,13 @@
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
+  border: 1px solid rgba(12, 173, 10, 0.1);
 }
 
 .product:hover {
   box-shadow: var(--shadow);
   transform: translateY(-10px);
+  border-color: var(--main-color-alt);
 }
 
 .product img {
