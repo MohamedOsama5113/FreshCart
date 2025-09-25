@@ -1,18 +1,40 @@
 .products {
-  background-color: #fff;
+  background-color: var(--light-color);
+  padding: 20px 0;
 }
+
 .product {
-  border: solid 1px transparent;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(12, 173, 10, 0.1);
 }
+
 .product:hover {
   box-shadow: var(--shadow);
-  border-color: var(--main-color);
+  transform: translateY(-10px);
+  border-color: var(--main-color-alt);
 }
+
+.product img {
+  transition: all 0.5s ease;
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
 .product .btn-add {
-  transition: transform 0.3s, opacity 0.3s;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(100%);
   opacity: 0;
+  border-radius: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
+
 .product:hover .btn-add {
   opacity: 1;
   transform: translateY(0%);
@@ -20,38 +42,59 @@
 
 .product .overlay {
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.03);
 }
+
 .product:hover .overlay {
   opacity: 1;
 }
 
-.product .btn-wishlist {
-  top: 5%;
-  right: 5%;
-  background-color: #fff;
-  border: 1px solid #dfe2e1;
-  color: #ad0a0a;
-  transition: 0.3s;
+.product .btn-wishlist,
+.product .btn-view {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.product .btn-wishlist:hover {
-  background-color: #ad0a0a;
-  border-color: #ad0a0a;
-  color: #fff;
+.product .btn-wishlist {
+  color: var(--rating-color);
+  border: none;
 }
 
 .product .btn-view {
-  top: 5%;
-  right: 5%;
-  background-color: #fff;
-  border: 1px solid #dfe2e1;
-  color: #0a67ad;
-  transition: 0.3s;
+  color: var(--main-color);
+  border: none;
 }
 
+.product .btn-wishlist:hover,
 .product .btn-view:hover {
-  background-color: #0a67ad;
-  border-color: #0a67ad;
-  color: #fff;
+  transform: scale(1.1);
+  background: var(--main-color);
+  color: white;
+}
+
+.product .price {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.product .title {
+  font-weight: 500;
+  color: var(--text-color-main);
+  transition: color 0.3s ease;
+}
+
+.product .title:hover {
+  color: var(--main-color);
 }

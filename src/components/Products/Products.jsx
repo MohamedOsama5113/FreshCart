@@ -108,9 +108,6 @@ export default function Products() {
                 imageSrc={emptyProducts}
                 message={`No found products about "${searchValue}" at the moment`}
               />
-              // <div className="alert alert-success text-center fs-5">
-              //   No products found at the moment
-              // </div>
             )}
           </div>
         )}

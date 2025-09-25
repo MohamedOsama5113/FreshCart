@@ -1,24 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
 :root {
-  --text-color-main: #21313c;
-  --text-color-main-alt: #5c6c75;
+  --text-color-main: #2D3436;
+  --text-color-main-alt: #4A5568;
 
-  --main-color: #0aad0a;
-  --light-color: #f0f3f2;
+  --main-color: #0CAD0A;
+  --main-color-hover: #099108;
+  --main-color-light: #E6F6E6;
+  --light-color: #F7FAF7;
 
-  --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
-    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
-    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  --shadow: rgba(12, 173, 10, 0.1) 0px 4px 12px,
+    rgba(12, 173, 10, 0.06) 0px 1px 3px;
   --font-family: "Encode Sans Expanded", sans-serif;
 
-  --rating-color: #ffc908;
-  --main-color-alt: #0ad10a;
+  --rating-color: #FFA41C;
+  --main-color-alt: #34D399;
 }
 
 :focus-visible {
   outline: none;
 }
+
 .form-select:focus {
   border-color: var(--main-color);
   box-shadow: none;
@@ -28,16 +31,20 @@
   color: var(--light-color);
   background: var(--main-color);
 }
+
 body {
   font-family: var(--font-family) !important;
   color: var(--text-color-main-alt);
 }
+
 .rating-color {
   color: var(--rating-color);
 }
+
 .cursor-pointer {
   cursor: pointer;
 }
+
 a,
 a:hover {
   color: black;
@@ -47,18 +54,23 @@ a:hover {
 .font-sm {
   font-size: 14px;
 }
+
 .text-main {
   color: var(--main-color);
 }
+
 .text-color {
   color: var(--text-color-main-alt);
 }
+
 .bg-main {
   background-color: var(--main-color) !important;
 }
+
 .bg-main-dark {
   background-color: var(--text-color-main) !important;
 }
+
 .bg-main-alt {
   background-color: var(--main-color-alt) !important;
 }
@@ -66,9 +78,11 @@ a:hover {
 .bg-main-light {
   background-color: var(--light-color) !important;
 }
+
 .title-main {
   color: var(--text-color-main);
 }
+
 .offline {
   width: 100%;
   text-align: center;
@@ -89,8 +103,76 @@ a:hover {
 
 .form-control:focus {
   background-color: #fff;
-  border-color: #85d685;
-  box-shadow: 0 0 0 0.25rem rgba(10, 173, 10, 0.25);
-  color: #21313c;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+  color: var(--text-color-main);
   outline: 0;
+}
+
+/* Adding new modern styles */
+.btn {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 8px 20px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn.bg-main {
+  background-color: var(--main-color) !important;
+  border-color: var(--main-color);
+  color: white;
+}
+
+.btn.bg-main:hover {
+  background-color: var(--main-color-hover) !important;
+  border-color: var(--main-color-hover);
+}
+
+.btn.btn-outline-success {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.btn.btn-outline-success:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: white;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 2px solid #eee;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+}
+
+/* Modern Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
 }

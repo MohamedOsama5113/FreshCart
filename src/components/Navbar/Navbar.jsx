@@ -66,7 +66,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-md bg-main-light fixed-top border-bottom">
       <div className="container py-2">
-        <NavLink className="navbar-brand mb-md-2 " to="/home">
+        <NavLink className="navbar-brand mb-md-2 " to="/">
           <img src={logo} alt="Fresh-Cart Logo" className="w-100" />
         </NavLink>
         <button
@@ -93,16 +93,7 @@ export default function Navbar() {
                 <li className="nav-item">
                   <NavLink
                     className="nav-link"
-                    to="/home"
-                    onClick={handleNavLinkClick}
-                  >
-                    Home
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    to="/products"
+                    to="/"
                     onClick={handleNavLinkClick}
                   >
                     Products

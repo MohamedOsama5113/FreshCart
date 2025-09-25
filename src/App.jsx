@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import HomePage from "./components/HomePage/HomePage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Offline } from "react-detect-offline";
 
@@ -46,15 +45,7 @@ export default function App() {
           index: true,
           element: (
             <ProtectedRoutes>
-              <HomePage />
-            </ProtectedRoutes>
-          ),
-        },
-        {
-          path: "home",
-          element: (
-            <ProtectedRoutes>
-              <HomePage />
+              <Products />
             </ProtectedRoutes>
           ),
         },
