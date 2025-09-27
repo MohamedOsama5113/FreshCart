@@ -10,7 +10,6 @@ export default function SignIn() {
   let { updateToken } = useContext(tokenContext);
 
   const [showPassword, setShowPassword] = useState(false);
-  const [showRePassword, setShowRePassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [isLodaing, setIsloading] = useState(false);
 
@@ -25,16 +24,12 @@ export default function SignIn() {
         "Password must start with an uppercase letter and be at least 8 characters long"
       )
       .required("Password is required"),
-    rePassword: Yup.string()
-      .oneOf([Yup.ref("password")], "Passwords must match")
-      .required("Please confirm your password"),
   });
 
   let formik = useFormik({
     initialValues: {
       email: "",
       password: "",
-      rePassword: "",
     },
     validationSchema: SignupSchema,
     onSubmit: (values) => {
@@ -114,9 +109,8 @@ export default function SignIn() {
                       }}
                     >
                       <i
-                        className={`fa-regular ${
-                          showPassword ? "fa-eye-slash text-main" : "fa-eye"
-                        }`}
+                        className={`fa-regular ${showPassword ? "fa-eye-slash text-main" : "fa-eye"
+                          }`}
                       ></i>
                     </button>
                   </div>
@@ -127,49 +121,6 @@ export default function SignIn() {
                     </div>
                   ) : null}
                 </div>
-                <div className="mb-2">
-                  <label htmlFor="rePassword">Re-password:</label>
-                  <div className="position-relative">
-                    <input
-                      id="rePassword"
-                      name="rePassword"
-                      type={showRePassword ? "text" : "password"}
-                      className="form-control"
-                      value={formik.values.rePassword}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                    />
-                    <button
-                      type="button"
-                      className="btn text-color border-0 position-absolute top-50 end-0 translate-middle-y"
-                      onClick={() => {
-                        setShowRePassword(!showRePassword);
-                      }}
-                    >
-                      <i
-                        className={`fa-regular ${
-                          showRePassword ? "fa-eye-slash text-main" : "fa-eye"
-                        }`}
-                      ></i>
-                    </button>
-                  </div>
-
-                  {formik.errors.rePassword && formik.touched.rePassword ? (
-                    <div className="alert alert-danger my-2">
-                      {formik.errors.rePassword}
-                    </div>
-                  ) : null}
-                </div>
-
-                <p className="mb-3 font-sm ">
-                  Forgot your password?
-                  <Link
-                    to="/auth/forgot-password"
-                    className="text-main ms-1 fw-bold "
-                  >
-                    Reset it here
-                  </Link>
-                </p>
 
                 {errorMsg ? (
                   <div className="alert alert-danger text-center">
